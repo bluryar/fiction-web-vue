@@ -1,0 +1,75 @@
+$widget-color:#914ee9;
+$summary-low-level-color: #979797;
+$widget-color-shallow: #ba9be7;
+
+@mixin mixin-search-icon($diameter,$icon-diameter) {
+
+  @keyframes shadow-swing {
+    0% {
+      box-shadow: 0 0 10px -8px;
+    }
+    50% {
+      box-shadow: 0 0 11px -5px;
+    }
+    100% {
+      box-shadow: 0 0 10px -8px;
+    }
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $diameter;
+  animation: shadow-swing 4s infinite linear;
+  width: $diameter;
+  height: $diameter;
+
+  i {
+    display: block;
+    text-align: center;
+    line-height: $icon-diameter;
+    font-size: $icon-diameter;
+    color: $widget-color-shallow;
+  }
+}
+
+@keyframes rubber-band{
+  0%{
+    transform: scale3d(1,1,1);
+  }
+  35%{
+    transform: scale3d(1.075,.95,1);
+  }
+  45%{
+    transform: scale3d(.95,1,1);
+  }
+  60%{
+    transform: scale3d(1.05,.8,1);
+  }
+  75%{
+    transform: scale3d(1.05,.95,1);
+  }
+  100%{
+    transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes rubber-band2{
+  0%{
+    transform: scale3d(1,1,1);
+  }
+  35%{
+    transform: scale3d(1.1,1.1,1);
+  }
+  45%{
+    transform: scale3d(1.12,1.12,1);
+  }
+  60%{
+    transform: scale3d(1.1,1.1,1);
+  }
+  75%{
+    transform: scale3d(1.05,1.05,1);
+  }
+  100%{
+    transform: scale3d(1,1,1);
+  }
+}
