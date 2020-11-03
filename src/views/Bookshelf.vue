@@ -46,7 +46,7 @@ export default {
       books: []
     };
   },
-  async mounted() {
+  async created() {
     let res = this.$ls.get("localBookShelf");
     if (res) {
       for (const book in res) {

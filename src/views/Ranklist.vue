@@ -37,7 +37,7 @@ export default {
   computed: {
     ...mapGetters(["trueTagBookMaps"])
   },
-  async mounted() {
+  async created() {
     //轮循所有类型，对没有内容返回的将tag置为false, 存储返回结果
     if (this.trueTagBookMaps.length === 0) {
       await this.$store.dispatch("initTypeMap");

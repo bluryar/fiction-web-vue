@@ -47,7 +47,7 @@ export default {
       return lastChapterIndex;
     }
   },
-  async mounted() {
+  async created() {
     //设置简介信息
     let id = parseInt(this.$route.params.book_id);
     if (isNaN(id)) {

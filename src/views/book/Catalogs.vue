@@ -68,7 +68,7 @@ export default {
       this.loading = false;
     }
   },
-  async mounted() {
+  async created() {
     // 设置目录
     this.loading = true;
     const res = await getChpatersSummary(
