@@ -18,6 +18,10 @@ export default {
     backBtn: {
       type: Boolean,
       required: true
+    },
+    push: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -29,6 +33,10 @@ export default {
     goto() {
       if (this.path) {
         this.$router.replace(this.path);
+
+        if (this.push) {
+          this.$router.back();
+        }
       } else {
         this.$router.back();
       }

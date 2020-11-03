@@ -4,6 +4,7 @@
       :path="$route.path.replace(/\/\d+$/, '')"
       :back-btn="true"
       class="header"
+      :push="true"
     >
       <span class="chpater-title" v-if="content !== null">{{
         content.title
