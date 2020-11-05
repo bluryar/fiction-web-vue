@@ -19,6 +19,7 @@
     >
       <h3 v-if="this.content">{{ this.content.title }}</h3>
       <div
+        class="paragraph"
         v-for="(ele, index) in contentHtmlArray"
         :key="index"
         :style="{ fontSize: fontsize + 'px', lineHeight: fontsize + 10 + 'px' }"
@@ -191,11 +192,6 @@ $animate-ms: 0.33s;
   position: relative;
   overflow: hidden;
   z-index: 2;
-  p {
-    // 强制中文英文自动换行
-    word-wrap: break-word;
-    word-break: break-all; //将会导致某些特殊字符(ASCII)组成的分割线被换行
-  }
 
   .hidden-header {
     position: absolute;
@@ -238,9 +234,21 @@ $animate-ms: 0.33s;
     top: $header-height;
     transition: bottom $animate-ms, top $animate-ms;
 
-    box-sizing: border-box;
-    padding: 0 20px;
+    /*box-sizing: border-box;*/
     overflow: auto;
+    h3,
+    div.paragraph {
+      width: 90%;
+      margin: 0 auto;
+    }
+    p {
+      /*width: 100%;*/
+      // 强制中文英文自动换行
+      word-wrap: break-word;
+      word-break: break-all;
+      //将会导致某些特殊字符(ASCII)组成的分割线被换行
+      /*word-break: normal;*/
+    }
   }
 
   .chapter-title {

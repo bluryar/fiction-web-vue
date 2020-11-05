@@ -1,7 +1,14 @@
 import axios from "axios";
 import { Message } from "element-ui";
 
-const service = axios.create({});
+const apiHost =
+  process.env.NODE_ENV === "production"
+    ? "http://localhost:7001"
+    : "http://localhost:7001";
+
+const service = axios.create({
+  baseURL: apiHost
+});
 service.interceptors.response.use(
   response => {
     return response;
