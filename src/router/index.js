@@ -47,6 +47,10 @@ const routes = [
     name: "Content",
     component: () =>
       import(/* webpackChunkName: "book_content" */ "../views/book/Content.vue")
+  },
+  {
+    path: "*",
+    redirect: "/"
   }
 ];
 const router = new VueRouter({
