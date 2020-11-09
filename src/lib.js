@@ -3,7 +3,7 @@ import { Message } from "element-ui";
 
 const apiHost =
   process.env.NODE_ENV === "production"
-    ? "http://localhost:7001"
+    ? "http://book-server.talchs.tools"
     : "http://localhost:7001";
 
 const service = axios.create({
