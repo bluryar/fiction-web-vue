@@ -36,10 +36,13 @@
               ></recommend-book>
             </li>
           </ul>
-          <p v-if="loading" v-loading="loading">
-            <i class="el-icon-loading"></i>
-            加载中...
-          </p>
+          <p
+            v-if="loading"
+            v-loading="loading"
+            element-loading-text="拼命加载中"
+            element-loading-spinner="el-icon-loading"
+            style="width: 100px;height: 100px"
+          ></p>
           <p v-if="noMore">没有更多了</p>
         </div>
       </div>
@@ -87,7 +90,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/css/default-theme";
 
 #Home {

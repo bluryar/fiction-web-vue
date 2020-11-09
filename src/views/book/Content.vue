@@ -92,6 +92,14 @@ export default {
     }
     this.loading = true;
     await this.setContent();
+    if (!this.$ls.get("firstUse")) {
+      this.$ls.set("firstUse", "yes"); // ‘上锁，只保证该代码运行一次’
+      this.$message.info({
+        message: "点击屏幕中央全屏, 点击屏幕左右边缘翻页",
+        offset: 1,
+        duration: 3500
+      });
+    }
   },
   methods: {
     async onUpdateIndex() {
@@ -145,7 +153,7 @@ export default {
         this.$refs.content.scrollHeight
       );
 
-      let areaFactor = 0.1;
+      let areaFactor = 0.125;
       const cond = {
         top: contentHeight - evt.clientY < contentHeight * (1 - areaFactor),
         bottom: contentHeight - evt.clientY > contentHeight * areaFactor,
@@ -236,11 +244,13 @@ $animate-ms: 0.33s;
 
     /*box-sizing: border-box;*/
     overflow: auto;
+
     h3,
     div.paragraph {
       width: 90%;
       margin: 0 auto;
     }
+
     p {
       /*width: 100%;*/
       // 强制中文英文自动换行
