@@ -1,10 +1,7 @@
 import axios from "axios";
 import { Message } from "element-ui";
 
-const apiHost =
-  process.env.NODE_ENV === "production"
-    ? "http://book-server.talchs.tools"
-    : "http://localhost:7001";
+const apiHost = "http://book-server.talchs.tools";
 
 const service = axios.create({
   baseURL: apiHost
